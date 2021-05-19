@@ -41,7 +41,15 @@
       }
     }
   },
-  "keywords": [],
+  "keywords": [
+    "lightning",
+    "lnd",
+    "crypto",
+    "bitcoin",
+    "game",
+    "sphinx",
+    "n2n2"
+  ],
   "author": "masterial",
   "license": "ISC",
   "dependencies": {
