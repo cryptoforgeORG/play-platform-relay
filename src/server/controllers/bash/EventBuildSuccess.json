@@ -1,0 +1,67 @@
+{
+  "projectName": "masters-of-conquest",
+  "buildTargetName": "masters-of-conquest-headless",
+  "projectGuid": "93996fe3-b080-483d-995e-722c9984012e",
+  "orgForeignKey": "2485260",
+  "buildNumber": 14,
+  "buildStatus": "success",
+  "lastBuiltRevision": "c48b52e20c5b9f133812031a874c314bd57326ef",
+  "startedBy": "Konstantin Yurchenko <accounts@playent.net>",
+  "platform": "standalonelinux64",
+  "local": false,
+  "scmType": "collab",
+  "links": {
+    "api_self": {
+      "method": "get",
+      "href": "/api/orgs/play-entertainment-llc/projects/masters-of-conquest/buildtargets/masters-of-conquest-headless/builds/14"
+    },
+    "dashboard_url": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com"
+    },
+    "dashboard_project": {
+      "method": "get",
+      "href": "/build/orgs/play-entertainment-llc/projects/masters-of-conquest"
+    },
+    "dashboard_summary": {
+      "method": "get",
+      "href": "/build/orgs/play-entertainment-llc/projects/masters-of-conquest/buildtargets/masters-of-conquest-headless/builds/14/summary"
+    },
+    "dashboard_log": {
+      "method": "get",
+      "href": "/build/orgs/play-entertainment-llc/projects/masters-of-conquest/buildtargets/masters-of-conquest-headless/builds/14/log"
+    },
+    "api_share": {
+      "method": "get",
+      "href": "/api/shares/b1d6-VAp9m"
+    },
+    "share_url": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com/share/b1d6-VAp9m/"
+    },
+    "artifacts": [
+      {
+        "key": "primary",
+        "name": ".ZIP file",
+        "primary": true,
+        "show_download": true,
+        "files": [
+          {
+            "filename": "masters-of-conquest-headless.zip",
+            "size": 424293010,
+            "resumable": false,
+            "href": "https://unitycloud-build-user-svc-live-build.s3.amazonaws.com/2485260/93996fe3-b080-483d-995e-722c9984012e/masters-of-conquest-headless-14/masters-of-conquest-headless.zip?AWSAccessKeyId=AKIAI6ZGSQWNDMF7X33A&Expires=1530665152&Signature=AS3VwZ93S6wax3tpyVDlDj48spQ%3D&response-content-disposition=attachment%3B%20filename%3Dplay-entertainment-llc-masters-of-conquest-masters-of-conquest-headless-14.zip&response-content-type=application%2Foctet-stream"
+          }
+        ]
+      }
+    ],
+    "dashboard_download_direct": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com/build/orgs/play-entertainment-llc/projects/masters-of-conquest/buildtargets/masters-of-conquest-headless/builds/14/download/direct/"
+    },
+    "dashboard_download": {
+      "method": "get",
+      "href": "https://developer.cloud.unity3d.com/build/orgs/play-entertainment-llc/projects/masters-of-conquest/buildtargets/masters-of-conquest-headless/builds/14/download/"
+    }
+  }
+}

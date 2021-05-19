@@ -1,0 +1,48 @@
+$theme-colors: (
+  "primary": #0091ea //Covalence Blue!  :D,,,,,,,
+);
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+  //   font-family: "Open Sans", sans-serif;
+  font-family: "Roboto Mono", Monaco, monospace;
+}
+
+.FormEditNpcProfile {
+  background: #b3b17b;
+}
+
+.FormEditStructureProfile {
+  background: #9eb6b8;
+}
+
+.FormEditStructureSequence {
+  background: #7f8793;
+
+  tr {
+    vertical-align: top;
+  }
+
+  .header {
+    background-color: #b3b17b;
+  }
+}
+
+.FormEditBotSequence {
+  background: #bcb4c4;
+}
+
+.FormEditBotProfile {
+  background: #af9294;
+}
+
+.FormEditRule {
+  background: #a1759c;
+}
+
+.FormEditBlueprint {
+  background: #5f4b8b;
+}

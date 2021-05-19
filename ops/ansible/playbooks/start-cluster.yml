@@ -1,0 +1,26 @@
+---
+- name: Create AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars_files:
+    - cluster_configs.yml
+
+  tasks:
+    - name: Debug
+      debug:
+        msg: "{{item.instance_name}} => {{item.instance_type}}"
+      with_items: "{{cluster_configs}}"
+
+    - include_tasks: start-node.yml
+      vars:
+        config: "{{item}}"
+
+      with_items: "{{cluster_configs}}"
+
+- hosts: relays
+  gather_facts: yes
+
+  roles:
+    - play

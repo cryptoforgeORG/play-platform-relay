@@ -1,0 +1,4 @@
+---
+play_path: '/srv/{{ domain_name }}'
+git_repo: 'git@github.com:destinatis/play-platform-core.git'
+git_branch: 'master'

@@ -1,0 +1,15 @@
+---
+aws_access_key: "AKIAI4YNM3WUPLPX5RAQ"
+aws_secret_key: "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"
+
+key_name: "playent"
+aws_region: "us-west-2"
+vpc_id: "vpc-9d9d7af8"
+
+nodejs_version: "8"
+
+# https://cloud-images.ubuntu.com/locator/ec2/
+# bionic 18.04LTS hvm:ebs-ssd
+ami_id: "ami-39c28c41"
+
+my_local_cidr_ip: "0.0.0.0/0"

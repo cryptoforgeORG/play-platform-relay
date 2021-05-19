@@ -1,0 +1,6 @@
+---
+cluster_configs:
+   - { instance_type: 't2.small', instance_name: 'core-1' }
+   # - { instance_type: 'c3.large', instance_name: 'core-2' }
+   # - { instance_type: 'c3.large', instance_name: 'core-3' }
+   # - { instance_type: 'c3.large', instance_name: 'core-4' }

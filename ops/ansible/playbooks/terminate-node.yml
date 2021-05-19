@@ -1,0 +1,60 @@
+---
+- name: EC2 Facts
+  ec2_instance_facts:
+    region: "{{ aws_region }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+
+    filters:
+      # "state": "running"
+      instance-state-name: "running"
+      "tag:Name": "{{config.instance_name}}"
+
+  register: ec2
+- debug: var=ec2
+
+- name: Kill EC2 Instance
+  ec2:
+    instance_ids: "{{ ec2.instances[0].instance_id }}"
+    # state: "{{ state }}"
+    state: "absent"
+    region: "{{ aws_region }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+
+- name: Remove host from known_hosts
+  known_hosts:
+    path: ~/.ssh/known_hosts
+    name: "{{ config.instance_name }}.playentertainment.online"
+    state: "absent"
+
+- name: Remove host from known_hosts
+  known_hosts:
+    path: ~/.ssh/known_hosts
+    name: "{{ ec2.instances[0].public_dns_name }}"
+    state: "absent"
+
+- name: Retrieve the Records First
+  route53:
+    state: get
+    zone: playentertainment.online
+    record: "{{ config.instance_name }}.playentertainment.online"
+    type: A
+  register: rec
+
+- name: display the record
+  debug: var=rec
+
+- name: Route 53 Delete Records
+  route53:
+    state: absent
+    zone: playentertainment.online
+    record: "{{ config.instance_name }}.playentertainment.online"
+    type: "{{ rec.set.Type }}"
+    ttl: "{{ rec.set.TTL }}"
+    value: "{{ rec.set.ResourceRecords[0].Value }}"
+    wait: yes
+  register: result
+
+- name: display results
+  debug: var=result
