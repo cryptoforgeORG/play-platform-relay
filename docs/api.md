@@ -1,5 +1,5 @@
 # API DOCS
 
 ```
-http://relay-1-staging.playentertainment.online:3000/balance
+http://relay-1.playentertainment.online:3000/balance
 ```

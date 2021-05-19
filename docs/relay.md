@@ -3,7 +3,7 @@ ec2-52-33-139-242.us-west-2.compute.amazonaws.com
 
 ### Bash
 ```
-ssh -i ~/.ssh/playent.pem ubuntu@relay-1-staging.playentertainment.online
+ssh -i ~/.ssh/playent.pem ubuntu@relay-1.playentertainment.online
 sudo -s
 docker exec -it $(docker ps --latest --quiet) bash
 ```

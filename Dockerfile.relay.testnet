@@ -51,7 +51,7 @@ COPY --from=builder /go/bin/lnd /bin/
 
 # RUN git clone https://github.com/masterial/play-platform-master-relay /relay/
 # WORKDIR /relay
-# ARG branch="staging"
+# ARG branch="main"
 # RUN git checkout $branch
 
 WORKDIR /relay
