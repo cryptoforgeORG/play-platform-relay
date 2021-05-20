@@ -4,7 +4,7 @@ FROM alpine:3.11 as final
 EXPOSE 80
 EXPOSE 8443
 
-ENV NODE_ENV production
+# ENV NODE_ENV production
 # ENV NODE_SCHEME http
 
 RUN apk --no-cache add bash ca-certificates expect vim git
