@@ -5,14 +5,6 @@ EXPOSE 8443
 
 RUN apt-get update
 
-RUN apt-get -y install dirmngr apt-transport-https lsb-release ca-certificates
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-
-RUN apt-get install -y git supervisor
-
-# WORKDIR /relay
-# COPY . .
-
 RUN apt-get install -y \
     automake \
     curl \
@@ -31,7 +23,17 @@ RUN apt-get install -y \
     libmcrypt-dev \
     vim \
     wget \
-    unzip
+    unzip \
+    dirmngr \
+    apt-transport-https \
+    lsb-release \
+    ca-certificates \
+    supervisor
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+# WORKDIR /relay
+# COPY . .
 
 RUN git clone https://github.com/masterial/play-platform-relay /relay/
 
