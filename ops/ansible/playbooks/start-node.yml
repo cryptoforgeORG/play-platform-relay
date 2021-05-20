@@ -51,6 +51,11 @@
 - name: start an instance with a public IP address
   community.aws.ec2_instance:
     name: "{{config.instance_name}}"
+    volumes:
+      - device_name: /dev/sda1
+        ebs:
+          volume_size: 64
+          delete_on_termination: true
     aws_access_key: "{{aws_access_key}}"
     aws_secret_key: "{{aws_secret_key}}"
     region: "{{aws_region}}"
