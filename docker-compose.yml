@@ -14,8 +14,8 @@ services:
     mem_limit: 512M
     mem_reservation: 256M
     cpus: 0.5
-  env_file:
-    - /etc/environment
+    env_file:
+      - /etc/environment
 
   # relay:
   #   build:
