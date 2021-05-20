@@ -18,6 +18,11 @@ function_menu_logs () {
                 echo $cmd
                 $cmd          
                 ;;
+            "log_game")
+                cmd="tail -f /var/log/supervisor/game.log"
+                echo $cmd
+                $cmd          
+                ;;
             "log_tor")
                 cmd="tail -f /var/log/supervisor/tor.log"
                 echo $cmd
