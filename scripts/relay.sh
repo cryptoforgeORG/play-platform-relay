@@ -114,7 +114,7 @@ function_menu_main () {
             #     echo $cmd
             #     $cmd            
             #     ;;         
-            "connection_string")
+            "restart")
                 function_menu_restart       
                 ;;
             "getinfo")
