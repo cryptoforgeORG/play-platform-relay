@@ -1,16 +1,36 @@
-# Start a new, final image.
-FROM alpine:3.11 as final
+FROM ubuntu:bionic as final
 
 EXPOSE 80
 EXPOSE 8443
 
-# ENV NODE_ENV production
-# ENV NODE_SCHEME http
+RUN apt-get update
 
-RUN apk --no-cache add bash ca-certificates expect vim git supervisor
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python jq git curl
+RUN apt-get -y install dirmngr apt-transport-https lsb-release ca-certificates
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
-RUN apk add --no-cache --update nodejs=12.22.1-r0 nodejs-npm=12.22.1-r0  
+RUN apt-get install -y git supervisor
+
+WORKDIR /relay
+COPY . .
+
+RUN apt-get install -y \
+    automake \
+    git \
+    nasm  \
+    autoconf  \
+    libpng-dev\
+    libwebp-dev \
+    g++ \
+    gcc \
+    # libstdc++ \
+    make \
+    python \
+    jq \
+    curl \
+    libmcrypt-dev \
+    vim \
+    wget \
+    unzip
 
 RUN git clone https://github.com/masterial/play-platform-relay /relay/
 
@@ -23,14 +43,12 @@ RUN git checkout $branch
 RUN npm install
 RUN npm run build
 
-USER root
+WORKDIR /relay/
 
 RUN mkdir -p /var/log/supervisor
 COPY ./docker/supervisord.conf /etc/supervisord.conf
 COPY ./docker/game_supervisor.conf /etc/supervisor.d/game_supervisor.ini
 
 COPY ./src/server/controllers/bash /relay/dist/bash
-
-# ENV ENV="/etc/profile"
 
 ENTRYPOINT [ "bash", "/relay/docker/entrypoint.game.sh" ]

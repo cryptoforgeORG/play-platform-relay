@@ -2,11 +2,13 @@
 
 echo "deploy script started"
 
-PID="$(ps -A | grep masters-of | awk '{print $1}')" && echo "${PID}"
+# PID="$(ps -A | grep masters-of | awk '{print $1}')" && echo "${PID}"
 # ps -p $PID -o %cpu,%mem,cmd
 
 echo "stop old instance"
 (! pidof masters-of-conquest-headless) || sudo kill -9 $(pidof masters-of-conquest-headless)
+# kill -9 $(pidof masters-of-conquest-headless)
+# kill -9 $PID
 
 mv masters-of-conquest-headless/moc.log "moc_$(date +"%Y%m%d_%H%M").log"
 
@@ -23,7 +25,6 @@ rm -rf masters-of-conquest-*
 wget -O masters-of-conquest-headless.zip $URL
 
 echo "unzip"
-mkdir masters-of-conquest-headless
 unzip masters-of-conquest-headless.zip -d masters-of-conquest-headless
 
 # echo "set up logging"
