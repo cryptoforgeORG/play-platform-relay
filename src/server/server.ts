@@ -10,6 +10,8 @@ const fs = require('fs');
 
 const express = require('express');
 
+const serveIndex = require("serve-index");
+
 import apiRouter from './routes/api';
 import formsRouter from './routes/forms';
 
@@ -21,6 +23,12 @@ app.use(compression());
 
 app.use('/api', apiRouter);
 app.use('/forms', formsRouter);
+
+app.use(
+    "/files",
+    express.static("masters-of-conquest-headless"),
+    serveIndex("masters-of-conquest-headless", { icons: true })
+);
 
 app.get('*', function (req: any, res: any) {
     res.sendFile('index.html', { root: path.join(__dirname, process.env.PATH_PUBLIC) });

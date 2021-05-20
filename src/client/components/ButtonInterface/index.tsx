@@ -1,23 +1,42 @@
 /* @flow */
 
-import React from "react";
+import React from 'react';
 
 // import styles from './styles.scss';
 
-type Props = { actions: any; ws: any };
+type Props = { actions: any, ws: any };
 
-export default ({ actions }: Props) => (
+export default ({ actions, ws }: Props) => (
   <div className="ButtonInterface">
     <h4>Button Interface</h4>
-    <button onClick={() => actions.pingCore()}>Ping Core</button>
+    <button onClick={() => actions.info(ws)}>Build Info</button>&nbsp;|&nbsp;
+    <button
+      onClick={() => {
+        if (window.confirm('Are you sure?')) actions.deploy(ws);
+      }}
+    >
+      Deploy
+    </button>
+    &nbsp;|&nbsp;
+    <button onClick={() => actions.inspect(ws)}>Inspect</button>&nbsp;|&nbsp;
+    <button onClick={() => actions.log(ws)}>Last Logline</button>&nbsp;|&nbsp;
     <br />
-    <button onClick={() => actions.redisWrite()}>Write to Redis</button>
     <br />
-    <button onClick={() => actions.redisRead()}>Read from Redis</button>
-    <br />
-    <button onClick={() => actions.pingApiServer()}>Ping API Server</button>
-    <br />
-    <button onClick={() => actions.pingUnityMaster()}>Ping Unity Master</button>
+    <button
+      onClick={() => {
+        if (window.confirm('Are you sure?')) actions.start(ws);
+      }}
+    >
+      Start Client
+    </button>
+    &nbsp;|&nbsp;
+    <button
+      onClick={() => {
+        if (window.confirm('Are you sure?')) actions.stop(ws);
+      }}
+    >
+      Stop Clent
+    </button>
     <br />
   </div>
 );
