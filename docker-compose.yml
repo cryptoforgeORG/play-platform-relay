@@ -13,7 +13,6 @@ services:
       - node_modules:/relay/node_modules
     mem_limit: 512M
     mem_reservation: 256M
-    cpus: 0.5
     env_file:
       - /etc/environment
 
