@@ -13,7 +13,7 @@ RUN apk add --no-cache --update nodejs=12.22.1-r0 nodejs-npm=12.22.1-r0 git supe
 
 RUN git clone https://github.com/masterial/play-platform-relay /relay/
 
-WORKDIR /relay/
+WORKDIR /relay
 
 ARG branch="main"
 
@@ -23,8 +23,6 @@ USER root
 
 RUN npm install
 RUN npm run build
-
-WORKDIR /relay/
 
 RUN mkdir -p /var/log/supervisor
 COPY ./docker/supervisord.conf /etc/supervisord.conf
