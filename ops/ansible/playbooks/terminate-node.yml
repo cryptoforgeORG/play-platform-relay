@@ -1,6 +1,6 @@
 ---
 - name: EC2 Facts
-  ec2_instance_facts:
+  ec2_instance_info:
     region: "{{ aws_region }}"
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
