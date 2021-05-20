@@ -23,6 +23,7 @@ rm -rf masters-of-conquest-*
 wget -O masters-of-conquest-headless.zip $URL
 
 echo "unzip"
+mkdir masters-of-conquest-headless
 unzip -d masters-of-conquest-headless masters-of-conquest-headless.zip
 
 # echo "set up logging"
