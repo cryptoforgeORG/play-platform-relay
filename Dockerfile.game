@@ -9,7 +9,7 @@ ENV NODE_ENV production
 
 RUN apk --no-cache add bash ca-certificates expect vim git
 
-RUN apk add --no-cache --update nodejs=12.21.0-r0 git supervisor
+RUN apk add --no-cache --update nodejs=12.22.1-r0 nodejs-npm=12.22.1-r0 git supervisor
 
 RUN git clone https://github.com/masterial/play-platform-relay /relay/
 
