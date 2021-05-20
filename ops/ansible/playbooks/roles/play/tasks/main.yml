@@ -5,8 +5,8 @@
 - name: Print inventory_hostname
   debug: var=inventory_hostname
 
-# - name: Print ec2 information
-#   debug: var=hostvars[inventory_hostname].ec2
+- name: Print testnet information
+  debug: var=hostvars[inventory_hostname].testnet
 
 - name: Print ansible_hostname
   debug: var=ansible_host
