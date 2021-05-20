@@ -21,6 +21,7 @@ RUN git checkout $branch
 
 USER root
 
+RUN npm install
 RUN npm run build
 
 WORKDIR /relay/
@@ -31,4 +32,4 @@ COPY ./docker/game_supervisor.conf /etc/supervisor.d/game_supervisor.ini
 
 ENV ENV="/etc/profile"
 
-ENTRYPOINT [ "bash", "/relay/docker/entrypoint.sh" ]
+ENTRYPOINT [ "bash", "/relay/docker/entrypoint.game.sh" ]
