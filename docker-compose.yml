@@ -13,6 +13,8 @@ services:
       - node_modules:/relay/node_modules
     mem_limit: 512M
     mem_reservation: 256M
+
+    command: "npm start"
     env_file:
       - /etc/environment
 
