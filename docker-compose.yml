@@ -16,7 +16,7 @@ services:
     mem_reservation: 256M
     ports:
       - "8443:8443"
-    command: "npm run dev"
+    command: "npm start"
     env_file:
       - /etc/environment
 
