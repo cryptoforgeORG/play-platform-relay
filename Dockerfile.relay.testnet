@@ -49,7 +49,7 @@ COPY --from=builder /go/bin/lnd /bin/
 # RUN apk add --no-cache --update nodejs=12.21.0-r0 nodejs-npm=12.21.0-r0 sqlite=3.30.1-r2 
 # RUN apt-get install -y nodejs=12.21.0-r0 nodejs-npm=12.21.0-r0 sqlite=3.30.1-r2 
 
-# RUN git clone https://github.com/masterial/play-platform-master-relay /relay/
+# RUN git clone https://github.com/masterial/play-platform-relay /relay/
 # WORKDIR /relay
 # ARG branch="main"
 # RUN git checkout $branch

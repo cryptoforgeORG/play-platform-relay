@@ -1,5 +1,5 @@
 {
-  "name": "play-platform-master-relay",
+  "name": "play-platform-relay",
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
@@ -105,16 +105,10 @@
       ],
       "@babel/preset-flow"
     ],
-    "plugins": [
-      "loadable-components/babel",
-      "dynamic-import-node",
-      "lodash"
-    ],
+    "plugins": ["loadable-components/babel", "dynamic-import-node", "lodash"],
     "env": {
       "production": {
-        "plugins": [
-          "transform-remove-console"
-        ]
+        "plugins": ["transform-remove-console"]
       }
     }
   },
@@ -126,11 +120,7 @@
       "prettier",
       "prettier/react"
     ],
-    "plugins": [
-      "lodash-fp",
-      "react",
-      "prettier"
-    ],
+    "plugins": ["lodash-fp", "react", "prettier"],
     "settings": {
       "import/resolver": {
         "webpack": {
@@ -152,10 +142,7 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
+          "extensions": [".js", ".jsx"]
         }
       ],
       "import/no-extraneous-dependencies": [
@@ -167,9 +154,7 @@
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
-          "specialLink": [
-            "to"
-          ]
+          "specialLink": ["to"]
         }
       ],
       "lodash-fp/use-fp": "off",
@@ -187,27 +172,20 @@
       "__DEV__": true
     }
   },
-  "eslintIgnore": [
-    "tools/flow"
-  ],
+  "eslintIgnore": ["tools/flow"],
   "stylelint": {
     "extends": [
       "stylelint-config-standard",
       "stylelint-config-recommended-scss",
       "./node_modules/prettier-stylelint/config.js"
     ],
-    "plugins": [
-      "stylelint-scss"
-    ],
+    "plugins": ["stylelint-scss"],
     "rules": {
       "string-quotes": "single",
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
+          "ignorePseudoClasses": ["global", "local"]
         }
       ]
     }
@@ -439,10 +417,7 @@
     "webpack-manifest-plugin": "^2.0.3"
   },
   "pkg": {
-    "assets": [
-      "config/*",
-      "dist/config/*"
-    ]
+    "assets": ["config/*", "dist/config/*"]
   },
   "bin": "dist/app.js"
 }

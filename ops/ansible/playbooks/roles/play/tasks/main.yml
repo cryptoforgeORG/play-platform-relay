@@ -143,7 +143,7 @@
 
 - name: clone a private repository
   git: >
-    repo=git@github.com:masterial/play-platform-master-relay.git
+    repo=git@github.com:masterial/play-platform-relay.git
     key_file=/root/.ssh/id_rsa.github
     dest={{ relay_path }}
     version={{ git_branch }}
