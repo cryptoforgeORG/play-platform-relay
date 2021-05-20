@@ -6,8 +6,8 @@ PID="$(ps -A | grep masters-of | awk '{print $1}')" && echo "${PID}"
 # ps -p $PID -o %cpu,%mem,cmd
 
 echo "stop old instance"
-kill -9 $(pidof masters-of-conquest-headless)
-kill -9 $PID
+kill $(pidof masters-of-conquest-headless)
+kill $PID
 
 mv masters-of-conquest-headless/moc.log "moc_$(date +"%Y%m%d_%H%M").log"
 
