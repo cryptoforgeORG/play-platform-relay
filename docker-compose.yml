@@ -12,8 +12,8 @@ services:
       # - .lnd/:/relay/.lnd
       # - node_modules:/relay/node_modules
       - /relay/node_modules
-    mem_limit: 512M
-    mem_reservation: 256M
+    mem_limit: 2048M
+    mem_reservation: 2048M
     ports:
       - "8443:8443"
     command: "npm start"
