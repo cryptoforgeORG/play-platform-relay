@@ -8,6 +8,7 @@ EXPOSE 8443
 # ENV NODE_SCHEME http
 
 RUN apk --no-cache add bash ca-certificates expect vim git supervisor
+RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python jq git curl libmcrypt-devs
 
 RUN apk add --no-cache --update nodejs=12.22.1-r0 nodejs-npm=12.22.1-r0  
 
