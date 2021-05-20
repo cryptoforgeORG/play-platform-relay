@@ -47,22 +47,22 @@ function_menu_restart () {
     select opt in "${options[@]}"
     do
         case $opt in
-            "log_lnd")
+            "restart_lnd")
                 cmd="supervisorctl restart lnd"
                 echo $cmd
                 $cmd            
                 ;;
-            "log_relay")
+            "restart_relay")
                 cmd="supervisorctl restart relay"
                 echo $cmd
                 $cmd          
                 ;;
-            "log_game")
+            "restart_game")
                 cmd="supervisorctl restart game"
                 echo $cmd
                 $cmd          
                 ;;
-            "log_tor")
+            "restart_tor")
                 cmd="supervisorctl restart tor"
                 echo $cmd
                 $cmd          
