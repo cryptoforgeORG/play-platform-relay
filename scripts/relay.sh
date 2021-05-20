@@ -41,9 +41,48 @@ function_menu_logs () {
     done
 }
 
+function_menu_restart () {
+  PS3='Please enter your choice: '
+    options=("restart_lnd" "restart_relay" "restart_game" "restart_tor" "quit")
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "log_lnd")
+                cmd="supervisorctl restart lnd"
+                echo $cmd
+                $cmd            
+                ;;
+            "log_relay")
+                cmd="supervisorctl restart relay"
+                echo $cmd
+                $cmd          
+                ;;
+            "log_game")
+                cmd="supervisorctl restart game"
+                echo $cmd
+                $cmd          
+                ;;
+            "log_tor")
+                cmd="supervisorctl restart tor"
+                echo $cmd
+                $cmd          
+                ;;
+
+            "quit")
+                break
+                ;;
+            *) 
+                PS3="" # this hides the prompt
+                echo asdf | select foo in "${options[@]}"; do break; done # dummy select 
+                PS3="Please enter your choice: " # this displays the common prompt
+                ;;
+        esac
+    done
+}
+
 function_menu_main () {
   PS3='Please enter your choice: '
-    options=("create_wallet" "wallet_balance" "channel_balance" "list_channels" "logs" "connection_string" "getinfo" "check_tor" "quit")
+    options=("create_wallet" "wallet_balance" "channel_balance" "list_channels" "logs" "restart" "getinfo" "check_tor" "quit")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -70,10 +109,13 @@ function_menu_main () {
             "logs")
                 function_menu_logs       
                 ;;
+            # "connection_string")
+            #     cmd="cat /relay/connection_string.txt "
+            #     echo $cmd
+            #     $cmd            
+            #     ;;         
             "connection_string")
-                cmd="cat /relay/connection_string.txt "
-                echo $cmd
-                $cmd            
+                function_menu_restart       
                 ;;
             "getinfo")
                 cmd="lncli --lnddir=/relay/.lnd/ --macaroonpath=/relay/.lnd/data/chain/bitcoin/testnet/admin.macaroon getinfo"
