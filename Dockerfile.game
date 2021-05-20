@@ -29,7 +29,7 @@ RUN mkdir -p /var/log/supervisor
 COPY ./docker/supervisord.conf /etc/supervisord.conf
 COPY ./docker/game_supervisor.conf /etc/supervisor.d/game_supervisor.ini
 
-COPY ./src/server/controllers/bash /relay/dist/
+COPY ./src/server/controllers/bash /relay/dist/bash
 
 # ENV ENV="/etc/profile"
 
