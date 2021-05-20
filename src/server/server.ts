@@ -11,6 +11,7 @@ const fs = require('fs');
 const express = require('express');
 
 import apiRouter from './routes/api';
+import formsRouter from './routes/forms';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.static('public'));
 app.use(compression());
 
 app.use('/api', apiRouter);
+app.use('/forms', formsRouter);
 
 app.get('*', function (req: any, res: any) {
     res.sendFile('index.html', { root: path.join(__dirname, process.env.PATH_PUBLIC) });
