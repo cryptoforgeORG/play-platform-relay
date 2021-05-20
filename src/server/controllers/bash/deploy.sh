@@ -23,7 +23,8 @@ rm -rf masters-of-conquest-*
 wget -O masters-of-conquest-headless.zip $URL
 
 echo "unzip"
-unzip -d masters-of-conquest-headlessmasters-of-conquest-headless.zip 
+mkdir masters-of-conquest-headless
+unzip masters-of-conquest-headless.zip -d masters-of-conquest-headless
 
 # echo "set up logging"
 # touch log.txt

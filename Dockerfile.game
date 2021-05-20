@@ -20,11 +20,10 @@ ARG branch="main"
 
 RUN git checkout $branch
 
-USER root
-
 RUN npm install
 RUN npm run build
 
+USER root
 
 RUN mkdir -p /var/log/supervisor
 COPY ./docker/supervisord.conf /etc/supervisord.conf
