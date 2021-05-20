@@ -7,10 +7,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.game
-    volumes:
-      # - .:/relay
-      # - .lnd/:/relay/.lnd
-      - node_modules:/relay/node_modules
+    # volumes:
+    #   # - .:/relay
+    #   # - .lnd/:/relay/.lnd
+    #   - node_modules:/relay/node_modules
     mem_limit: 512M
     mem_reservation: 256M
     ports:
