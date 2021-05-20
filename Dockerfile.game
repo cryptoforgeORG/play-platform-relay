@@ -10,8 +10,8 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 RUN apt-get install -y git supervisor
 
-WORKDIR /relay
-COPY . .
+# WORKDIR /relay
+# COPY . .
 
 RUN apt-get install -y \
     automake \
