@@ -4,7 +4,7 @@
 
 function_menu_logs () {
   PS3='Please enter your choice: '
-    options=("log_lnd" "log_relay" "log_tor" "quit")
+    options=("log_lnd" "log_relay" "log_game" "log_tor" "quit")
     select opt in "${options[@]}"
     do
         case $opt in
