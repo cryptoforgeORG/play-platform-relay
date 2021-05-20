@@ -52,7 +52,7 @@
     record: "{{ config.instance_name }}.playentertainment.online"
     type: "{{ rec.set.type }}"
     ttl: "{{ rec.set.ttl }}"
-    value: "{{ rec.set.ResourceRecords[0].value }}"
+    value: "{{ rec.set.value }}"
     wait: yes
   register: result
 
