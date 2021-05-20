@@ -6,31 +6,32 @@ EXPOSE 8443
 RUN apt-get update
 
 RUN apt-get install -y \
-    automake \
-    curl \
-    git \
-    nasm  \
+    apt-transport-https \
     autoconf  \
-    libpng-dev\
-    libwebp-dev \
+    automake \
+    ca-certificates \
+    curl \
+    dirmngr \
     g++ \
     gcc \
-    # libstdc++ \
-    make \
-    python \
+    git \
     jq \
-    curl \
+    make \
+    nasm  \
     libmcrypt-dev \
+    libpng-dev\
+    libwebp-dev \
+    # libstdc++ \
+    lsb-release \
+    python \
+    unzip \
     vim \
     wget \
-    unzip \
-    dirmngr \
-    apt-transport-https \
-    lsb-release \
-    ca-certificates \
     supervisor
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+RUN apt-get install -y nodejs
 
 # WORKDIR /relay
 # COPY . .
