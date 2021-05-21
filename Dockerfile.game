@@ -21,7 +21,6 @@ RUN apt-get install -y \
     libmcrypt-dev \
     libpng-dev\
     libwebp-dev \
-    # libstdc++ \
     lsb-release \
     python \
     unzip \
@@ -33,8 +32,6 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 RUN apt-get install -y nodejs
 
-# WORKDIR /relay
-# COPY . .
 
 RUN git clone https://github.com/masterial/play-platform-relay /relay/
 

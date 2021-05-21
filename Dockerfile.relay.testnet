@@ -150,4 +150,4 @@ CMD touch ./sphinx.db
 
 ENV ENV="/etc/profile"
 
-ENTRYPOINT [ "bash", "/relay/docker/entrypoint.sh" ]
+ENTRYPOINT [ "bash", "/relay/docker/entrypoint.relay.sh" ]

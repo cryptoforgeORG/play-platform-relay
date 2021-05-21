@@ -3,4 +3,4 @@ node_modules/
 
 # production bundles
 .env
-_
+_/

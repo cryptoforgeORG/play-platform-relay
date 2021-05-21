@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 
 const serverConfig = {
@@ -30,6 +31,10 @@ const serverConfig = {
   externals: [nodeExternals()],
 };
 
+let commitHash = require("child_process")
+  .execSync("git rev-parse --short HEAD")
+  .toString();
+
 const clientConfig = {
   mode: process.env.NODE_ENV || "development",
   entry: "./src/client/index.tsx",
@@ -50,6 +55,11 @@ const clientConfig = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      __COMMIT_HASH__: JSON.stringify(commitHash),
+    }),
+  ],
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".css", ".scss"],
   },

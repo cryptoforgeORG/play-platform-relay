@@ -2,7 +2,7 @@
   "name": "play-platform-relay",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "dist.relay/app.js",
   "scripts": {
     "test": "echo 'no tests yet!' && exit 0",
     "docker-dev": "nodemon ./app.js",
@@ -13,13 +13,13 @@
     "start": "better-npm-run start",
     "start-password": "USE_PASSWORD=true ts-node ./app.ts",
     "start-hosting": "HOSTING_PROVIDER=true ts-node ./app.ts",
-    "prod": "cp config/app.json dist/config/app.json && cp config/config.json dist/config/config.json && env NODE_ENV=production node dist/app.js",
-    "dev": "cp config/app.json dist/config/app.json && cp config/config.json dist/config/config.json && env NODE_ENV=development node dist/app.js",
-    "tsc": "rm -rf dist/ && tsc && cp -r public dist/public",
+    "prod": "cp config/app.json dist.relay/config/app.json && cp config/config.json dist.relay/config/config.json && env NODE_ENV=production node dist.relay/app.js",
+    "dev": "cp config/app.json dist.relay/config/app.json && cp config/config.json dist.relay/config/config.json && env NODE_ENV=development node dist.relay/app.js",
+    "tsc": "rm -rf dist.relay/ && tsc && cp -r public dist.relay/public",
     "clean:build": "better-npm-run clean:build",
-    "inspect": "rm -rf dist/ && tsc && cp -r public dist/public && node --inspect ./dist/app.js",
-    "build-binaries": "rm -rf dist/ && tsc && cp config/app.json dist/config/app.json && cp config/config.json dist/config/config.json && pkg . --target node12-alpine-x64,node12-macos-x64 --out-path binaries",
-    "start-ecs": "cp postcss.config.js dist/postcss.config.js && cp -r tools dist/tools && cp config/app.json dist/config/app.json && cp config/config.json dist/config/config.json && export NODE_ENV=production && node --max-old-space-size=2048 dist/app.js"
+    "inspect": "rm -rf dist.relay/ && tsc && cp -r public dist.relay/public && node --inspect ./dist.relay/app.js",
+    "build-binaries": "rm -rf dist.relay/ && tsc && cp config/app.json dist.relay/config/app.json && cp config/config.json dist.relay/config/config.json && pkg . --target node12-alpine-x64,node12-macos-x64 --out-path binaries",
+    "start-ecs": "cp postcss.config.js dist.relay/postcss.config.js && cp -r tools dist.relay/tools && cp config/app.json dist.relay/config/app.json && cp config/config.json dist.relay/config/config.json && export NODE_ENV=production && node --max-old-space-size=2048 dist.relay/app.js"
   },
   "betterScripts": {
     "start": {
@@ -417,7 +417,7 @@
     "webpack-manifest-plugin": "^2.0.3"
   },
   "pkg": {
-    "assets": ["config/*", "dist/config/*"]
+    "assets": ["config/*", "dist.relay/config/*"]
   },
-  "bin": "dist/app.js"
+  "bin": "dist.relay/app.js"
 }
